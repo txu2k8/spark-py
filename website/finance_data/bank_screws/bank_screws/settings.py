@@ -7,6 +7,15 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+# setting for django
+import os
+import sys
+import django
+sys.path.append(os.path.dirname(os.path.abspath('.')))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'website.settings'    # 项目名.settings
+django.setup()
+
+# --------
 BOT_NAME = 'bank_screws'
 
 SPIDER_MODULES = ['bank_screws.spiders']
